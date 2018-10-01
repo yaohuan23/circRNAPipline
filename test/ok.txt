@@ -1,0 +1,2 @@
+cat ${sample}1A-BS.txt|awk -v OFS="\t" '{if($12=="M")print $1,$2,$2,$3,$6,$5,$7,$12}' > ${m5CResult}/${sample}methyC.bed
+cat ${m5CResult}/${sample}methyC.bed|awk -v OFS="\t" '$7>=0.1 && $6>=10 && $5>=1' > ${m5CResult}/${sample}methyC_qua.bed
